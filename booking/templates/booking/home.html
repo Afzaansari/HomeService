@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HomeService - Home Services</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #1f4e79;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: white;
+            padding: 80px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+            color: #1f4e79;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1f4e79;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: #163a5c;
+        }
+
+        .hero-box {
+            background: #eaf2f8;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 80px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            padding: 60px 7%;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 32px;
+            color: #1f4e79;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 50px;
+        }
+
+        .card h3 {
+            color: #1f4e79;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* FEATURES */
+
+        .features {
+            background: white;
+            padding: 60px 7%;
+            text-align: center;
+        }
+
+        .feature-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .feature {
+            width: 220px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+        }
+
+        .feature h3 {
+            color: #1f4e79;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #1f4e79;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        @media(max-width: 700px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            HomeService
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#services">Services</a>
+            <a href="#features">Features</a>
+            <a href="/admin/">Admin</a>
+        </div>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Professional Home Services
+            </h1>
+
+            <p>
+                Book trusted professionals for your home.
+                Get electricians, plumbers and mechanics
+                at your preferred date and time.
+            </p>
+
+            <a href="/book/" class="btn">
+                Book a Service
+            </a>
+
+        </div>
+
+        <div class="hero-box">
+            🏠
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <h2>Our Services</h2>
+
+        <p class="subtitle">
+            Choose the service you need
+        </p>
+
+        <div class="service-container">
+
+            <div class="card">
+
+                <div class="icon">
+                    🔧
+                </div>
+
+                <h3>Electrician</h3>
+
+                <p>
+                    Electrical repair, wiring,
+                    installation and maintenance.
+                </p>
+
+                <a href="/book/" class="btn">
+                    Book Now
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🚰
+                </div>
+
+                <h3>Plumber</h3>
+
+                <p>
+                    Pipe repair, tap installation
+                    and water-related services.
+                </p>
+
+                <a href="/book/" class="btn">
+                    Book Now
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🔨
+                </div>
+
+                <h3>Mechanic</h3>
+
+                <p>
+                    Vehicle repair and maintenance
+                    services at your doorstep.
+                </p>
+
+                <a href="/book/" class="btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features" id="features">
+
+        <h2>Why Choose HomeService?</h2>
+
+        <div class="feature-container">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    👨‍🔧
+                </div>
+
+                <h3>Professional Workers</h3>
+
+                <p>
+                    Skilled workers for different
+                    home services.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📅
+                </div>
+
+                <h3>Easy Booking</h3>
+
+                <p>
+                    Select service, date and
+                    preferred time slot.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    💰
+                </div>
+
+                <h3>Simple Billing</h3>
+
+                <p>
+                    Service billing can be managed
+                    easily through the system.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ⭐
+                </div>
+
+                <h3>Customer Reviews</h3>
+
+                <p>
+                    Customers can provide ratings
+                    and feedback.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 HomeService
+        </p>
+
+        <p>
+            Home Service Booking Platform | College Project
+        </p>
+
+    </footer>
+
+</body>
+</html>

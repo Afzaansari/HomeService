@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Service - HomeService</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        .header {
+            background: #1f4e79;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 500px;
+            max-width: 90%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1f4e79;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: #1f4e79;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #163a5c;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #1f4e79;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>HomeService</h1>
+        <p>Book Your Home Service</p>
+    </div>
+
+    <div class="container">
+
+        <h2>Service Booking Form</h2>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <label>Customer Name</label>
+            <input type="text" name="customer_name" placeholder="Enter your name" required>
+
+            <label>Phone Number</label>
+            <input type="text" name="phone" placeholder="Enter phone number" required>
+
+            <label>Select Service</label>
+            <select name="service" required>
+
+                <option value="">-- Select Service --</option>
+
+                {% for service in services %}
+                    <option value="{{ service.id }}">
+                        {{ service.name }} - ₹{{ service.price }}
+                    </option>
+                {% endfor %}
+
+            </select>
+
+            <label>Service Date</label>
+            <input type="date" name="date" required>
+
+            <label>Time Slot</label>
+            <select name="time_slot" required>
+
+                <option value="">-- Select Time --</option>
+                <option value="09:00 AM - 11:00 AM">09:00 AM - 11:00 AM</option>
+                <option value="11:00 AM - 01:00 PM">11:00 AM - 01:00 PM</option>
+                <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM</option>
+                <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
+
+            </select>
+
+            <label>Address</label>
+            <textarea name="address" placeholder="Enter your complete address" required></textarea>
+
+            <button type="submit">
+                Book Service
+            </button>
+
+        </form>
+
+        <a href="/" class="back">← Back to Home</a>
+
+    </div>
+
+</body>
+</html>
